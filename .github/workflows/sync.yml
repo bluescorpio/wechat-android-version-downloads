@@ -1,0 +1,39 @@
+name: Sync WeChat Android versions
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "23 3 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download upstream version data
+        run: >-
+          curl --fail --silent --show-error --location
+          https://raw.githubusercontent.com/DJB-Developer/wechat-android-history-versions/main/version.json
+          --output /tmp/wechat-version.json
+
+      - name: Generate version pages
+        run: node scripts/generate.mjs /tmp/wechat-version.json
+
+      - name: Check generated pages
+        run: node scripts/check.mjs
+
+      - name: Commit updated pages
+        run: |
+          git add README.md data/version.json versions
+          if git diff --cached --quiet; then
+            echo "No version changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: sync WeChat Android versions"
+          git push
