@@ -4,7 +4,8 @@
 
 ## 微信 8.0.79 官方下载地址
 
-- [官方下载 APK: weixin8079android3200_0x28004f30_arm64.apk](https://dldir1v6.qq.com/weixin/android/weixin8079android3200_0x28004f30_arm64.apk)
+- [官方下载 1: weixin8079android3200_0x28004f30_arm64_1.apk](https://dldir1v6.qq.com/weixin/android/weixin8079android3200_0x28004f30_arm64_1.apk)
+- [官方下载 2: weixin8079android3200_0x28004f30_arm64.apk](https://dldir1v6.qq.com/weixin/android/weixin8079android3200_0x28004f30_arm64.apk)
 
 ## 版本信息
 
@@ -13,7 +14,7 @@
 | 软件 | 微信 Android |
 | 版本号 | 8.0.79 |
 | 发布日期 | 2026-09-30 |
-| APK 数量 | 1 |
+| APK 数量 | 2 |
 
 下载链接指向腾讯官方域名 `qq.com`。安装历史版本前，请自行确认设备兼容性并备份重要数据。
 
